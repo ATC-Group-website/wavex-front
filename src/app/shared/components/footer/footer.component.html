@@ -1,0 +1,112 @@
+<footer class="footer text-white">
+  <div class="container-fluid py-5">
+    <div class="row align-items-center mb-4">
+      <div class="col-md-6">
+        <img src="images/logo.png" alt="WaveX" height="130" />
+      </div>
+      <div class="col-md-6">
+        <form class="d-flex gap-2" (ngSubmit)="subscribe()">
+          <input
+            type="text"
+            class="form-control border-start-0 bg-transparent rounded-pill text-center fs-4 text-white"
+            placeholder="Enter your email"
+            [(ngModel)]="email"
+            name="email"
+          />
+          <button
+            type="submit"
+            class="border-0 bg-white rounded-pill px-4 py-2"
+            [disabled]="email.length === 0"
+          >
+            Subscribe
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="border-top w-100 my-3"></div>
+
+    <div class="row">
+      <!-- Left Column - Branding -->
+      <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+        <div class="d-flex gap-2 footer-brand">
+          <span class="mt-2">
+            <svg
+              width="20"
+              height="28"
+              viewBox="0 0 32 42"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
+                fill="var(--primary-color)"
+              />
+            </svg>
+          </span>
+          <h3 class="h2 fw-bold mb-4 ls-wider">
+            TRANSFORMING FITNESS<br />THROUGH WATER
+          </h3>
+        </div>
+      </div>
+
+      <!-- Right Column - Navigation & Contact -->
+      <div class="col-lg-6">
+        <div class="row">
+          <!-- Navigation Links -->
+          <div class="mb-4 text-center" data-aos="fade-up" data-aos-delay="100">
+            <ul class="list-unstyled footer-nav row mb-0 g-2">
+              <li class="col-6 mb-2">
+                <a routerLink="/" class="text-white text-decoration-none"
+                  >Home</a
+                >
+              </li>
+              <li class="col-6 mb-2">
+                <a
+                  routerLink="/programs"
+                  class="text-white text-decoration-none"
+                  >Programs</a
+                >
+              </li>
+              <li class="col-6 mb-2">
+                <a routerLink="/about" class="text-white text-decoration-none"
+                  >About Us</a
+                >
+              </li>
+              <li class="col-6 mb-2">
+                <a routerLink="/faqs" class="text-white text-decoration-none"
+                  >FAQs</a
+                >
+              </li>
+              <li class="col-6 mb-2">
+                <a routerLink="/contact" class="text-white text-decoration-none"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-top w-100 my-3"></div>
+
+    <!-- Copyright -->
+    <div class="row align-items-center">
+      <div class="col-md-6 text-start" data-aos="fade-up" data-aos-delay="300">
+        <p class="mb-0 text-white-50">
+          © {{ currentYear }} WaveX. All rights reserved.
+        </p>
+      </div>
+      <div class="col-md-6 text-end" data-aos="fade-up" data-aos-delay="300">
+        <p class="mb-0 text-white-50">
+          <a
+            href="mailto:contact&#64;wavex.com"
+            class="text-white-50 text-decoration-none fs-4"
+            >contact&#64;wavex.com</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
