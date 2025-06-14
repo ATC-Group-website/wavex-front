@@ -1,1 +1,124 @@
-<p>contact works!</p>
+<section
+  id="home"
+  class="hero-section d-flex align-items-center min-vh-100 position-relative"
+></section>
+
+<section class="contact-section py-5 container">
+  <div class="contact-container">
+    <h2
+      class="d-flex gap-2 justify-content-center align-items-center"
+      data-aos="fade-down"
+    >
+      <svg
+        width="20"
+        height="28"
+        viewBox="0 0 32 42"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="mt-1"
+      >
+        <path
+          d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
+          fill="rgba(69, 129, 139, 1)"
+        />
+      </svg>
+      Contact Us Form
+    </h2>
+    <p class="contact-description" data-aos="fade-up" data-aos-delay="100">
+      Please contact facilities directly for more information on class times and
+      prices. If there aren't classes in your area talk to your local swimming
+      pool or gym and suggest they run FloatFit!
+    </p>
+
+    <form
+      class="contact-form"
+      (ngSubmit)="onSubmit(form)"
+      #form="ngForm"
+      ngNativeValidate
+      data-aos="fade-up"
+      data-aos-delay="200"
+    >
+      <div class="form-row" data-aos="fade-up" data-aos-delay="300">
+        <div class="form-group">
+          <label for="name">Name <span class="required">*</span></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            required
+            [(ngModel)]="contactForm.name"
+            #name="ngModel"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-control"
+            required
+            [(ngModel)]="contactForm.email"
+            #email="ngModel"
+          />
+        </div>
+      </div>
+
+      <div class="form-row" data-aos="fade-up" data-aos-delay="400">
+        <div class="form-group">
+          <label for="phone">Phone <span class="required">*</span></label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            class="form-control"
+            required
+            [(ngModel)]="contactForm.phone"
+            #phone="ngModel"
+          />
+        </div>
+        <div class="form-group">
+          <label for="country">Country <span class="required">*</span></label>
+          <select
+            id="country"
+            name="country"
+            class="form-select"
+            required
+            [(ngModel)]="contactForm.country"
+            #country="ngModel"
+          >
+            <option value="">Select a country</option>
+            <option value="AU">Australia</option>
+            <option value="CA">Canada</option>
+            <option value="IN">India</option>
+            <option value="UK">United Kingdom</option>
+            <option value="US">United States</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group" data-aos="fade-up" data-aos-delay="500">
+        <label for="message">Message <span class="required">*</span></label>
+        <textarea
+          id="message"
+          name="message"
+          class="form-control"
+          rows="5"
+          required
+          [(ngModel)]="contactForm.message"
+          #message="ngModel"
+        ></textarea>
+      </div>
+
+      <button
+        type="submit"
+        class="submit-btn btn"
+        data-aos="zoom-in"
+        data-aos-delay="600"
+      >
+        Submit
+      </button>
+    </form>
+  </div>
+</section>

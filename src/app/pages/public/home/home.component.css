@@ -41,7 +41,7 @@
   background-color: rgba(217, 217, 217, 0.23);
   color: rgba(47, 84, 95, 1);
   max-width: 600px;
-  padding: 0.5rem 8rem;
+  padding: 0.5rem 2rem;
 }
 
 .hero-subtitle p {
@@ -76,7 +76,7 @@
 /* Responsive Design */
 @media (max-width: 991.98px) {
   .hero-content-row {
-    gap: 2rem;  
+    gap: 2rem;
   }
 
   .hero-content-row :first-child {
@@ -181,6 +181,10 @@ section img {
   height: 100%;
 }
 
+.wavex-content h3 {
+  color: #24717dd9;
+}
+
 /* Responsive Grid */
 @media (max-width: 768px) {
   .wavex-grid {
@@ -228,7 +232,7 @@ section img {
 .wavex-content p {
   color: rgba(36, 113, 125, 0.85);
   font-weight: 600;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .wavex-content h3 {

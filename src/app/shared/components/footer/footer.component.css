@@ -18,21 +18,6 @@
   border-top: 1px solid rgba(0, 0, 0, 0.32) !important;
 }
 
-.footer::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(
-    90deg,
-    var(--primary-color) 0%,
-    rgba(255, 255, 255, 0.2) 50%,
-    var(--primary-color) 100%
-  );
-}
-
 .footer-brand h2 {
   font-size: 3rem;
   letter-spacing: -1px;
