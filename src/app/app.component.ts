@@ -10,7 +10,6 @@ import AOS from 'aos';
   styleUrl: './app.component.css',
 })
 export class AppComponent implements OnInit {
-  title = 'Wavex';
   platformId = inject(PLATFORM_ID);
 
   ngOnInit(): void {
@@ -19,8 +18,6 @@ export class AppComponent implements OnInit {
         duration: 1000,
         easing: 'ease-in-out',
         once: true,
-        mirror: false,
-        offset: 100,
       });
     }
   }

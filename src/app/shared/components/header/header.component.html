@@ -17,13 +17,31 @@
     <div class="collapse navbar-collapse justify-content-end" id="navbar">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link fs-5" routerLink="/">Home</a>
+          <a
+            class="nav-link fs-5"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" routerLink="/about">About</a>
+          <a
+            class="nav-link fs-5"
+            routerLink="/about"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >About</a
+          >
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" routerLink="/programs">Programs</a>
+          <a
+            class="nav-link fs-5"
+            routerLink="/programs"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Programs</a
+          >
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">

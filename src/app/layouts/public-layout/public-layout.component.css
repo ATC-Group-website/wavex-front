@@ -9,17 +9,11 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow-x: clip;
   z-index: 1;
 }
 
 /* Ensure the main content area takes up available space */
 .main-content > * {
   flex-grow: 1;
-}
-
-/* Responsive padding adjustments */
-@media (max-width: 768px) {
-  .main-content {
-    padding-top: 80px; /* Smaller padding on mobile */
-  }
 }

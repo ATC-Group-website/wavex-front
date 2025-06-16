@@ -1,0 +1,93 @@
+/* Hero Section */
+.hero-section {
+  padding-top: 100px;
+  background: linear-gradient(135deg, #4cc2dd 0%, #24717d 85%, #174951 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-description {
+  color: #2f545f;
+}
+
+.about-section .container {
+  background-color: #49b0c61a;
+  border-radius: 15px;
+  padding: 2rem;
+}
+
+.about-section .container h2 {
+  color: #406a73;
+}
+
+.about-section-description {
+  font-size: 1.3rem;
+  color: #5d7f87;
+  font-weight: 500;
+}
+
+.about-section-features div span {
+  font-size: 1.25rem;
+  color: #5d7f87;
+  font-weight: 600;
+}
+
+.objectives-title {
+  color: #406a73;
+}
+
+.objectives-list li {
+  font-size: 1.15rem;
+  color: #5d7f87;
+  font-weight: 500;
+}
+
+.what-drives-us-title {
+  color: #406a73;
+}
+
+.what-drives-us-box {
+  background: #f4fbfc;
+  border-radius: 20px;
+}
+
+.what-drives-us-box-title {
+  font-size: 2rem;
+  color: #406a73;
+}
+
+.what-drives-us-box-description {
+  font-size: 1.35rem;
+  color: #5d7f87;
+  font-weight: 500;
+}
+
+.history-box {
+  background: #f4fbfc;
+  border-radius: 18px;
+  max-width: 98%;
+}
+
+.history-box-title {
+  color: #406a73;
+  font-size: 2.2rem;
+}
+
+.history-box-description {
+  font-size: 1.35rem;
+  color: #5d7f87;
+  font-weight: 500;
+}
+
+.image-gallery-item-1 img,
+.image-gallery-item-2 img {
+  border-radius: 15px;
+  height: 240px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.image-gallery-item-3 img {
+  height: 260px;
+  object-fit: cover;
+}
