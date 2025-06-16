@@ -42,6 +42,56 @@
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
+
+/* hero section animation */
+
+
+.hero-section .wave-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 400%;
+  height: 180px;
+  background: 
+  url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,60 C150,0 300,120 450,60 C600,0 750,120 900,60 C1050,0 1200,120 1350,60 L1350,120 L0,120 Z' fill='%23ffffff' fill-opacity='0.2'/></svg>") repeat-x;
+  background-size: contain;
+  animation: waveMove 3s linear infinite;
+  z-index: 0;
+}
+
+@keyframes waveMove {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-25%);
+  }
+}
+
+.hero-content {
+  animation: slideIn 2s ease-out;
+}
+
+.floatfit-hero-text {
+  animation: slideIn 2.5s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Adjust z-index for content */
+.hero-content, .floatfit-hero-text {
+  position: relative;
+  z-index: 2;
+}
 /* Service Cards */
 
 .service-icon i {
@@ -150,7 +200,7 @@ section img {
 }
 
 .wavex-image {
-  width: 100%;
+  width: 90%;
   height: 100%;
   object-fit: cover;
   border-radius: 15px;
