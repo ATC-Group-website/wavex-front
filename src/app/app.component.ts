@@ -18,6 +18,7 @@ export class AppComponent implements OnInit {
         duration: 1000,
         easing: 'ease-in-out',
         once: true,
+        mirror: true,
       });
     }
   }

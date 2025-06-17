@@ -9,4 +9,15 @@ import { RouterLink } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   ngOnInit(): void {}
+
+  scrollToSection() {
+    const aboutDetails = document.getElementById('about_section');
+    if (aboutDetails) {
+      aboutDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const yOffset = -100;
+      const y =
+        aboutDetails.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  }
 }

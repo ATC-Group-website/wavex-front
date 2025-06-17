@@ -10,6 +10,43 @@
   color: #2f545f;
 }
 
+.hero-section .wave-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2400 120' preserveAspectRatio='none'><path d='M0,60 C400,20 800,100 1200,60 C1600,20 2000,100 2400,60 L2400,120 L0,120 Z' fill='%23ffffff' fill-opacity='0.2'/></svg>")
+    repeat-x;
+  background-size: 2400px 100%;
+  animation: waveMove 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes waveMove {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -2400px;
+  }
+}
+
+.hero-content {
+  animation: slideIn 2s ease-out;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .about-section .container {
   background-color: #49b0c61a;
   border-radius: 15px;
@@ -40,6 +77,14 @@
   font-size: 1.15rem;
   color: #5d7f87;
   font-weight: 500;
+}
+
+.objective-icon {
+  width: 20px;
+  height: 28px;
+  min-width: 20px;
+  min-height: 28px;
+  display: inline-block;
 }
 
 .what-drives-us-title {
@@ -79,6 +124,18 @@
   font-weight: 500;
 }
 
+.objective-image {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 991.98px) {
+  .objective-image {
+    max-height: 500px;
+  }
+}
+
 .image-gallery-item-1 img,
 .image-gallery-item-2 img {
   border-radius: 15px;
@@ -90,26 +147,4 @@
 .image-gallery-item-3 img {
   height: 260px;
   object-fit: cover;
-}
-
-.hero-section .wave-background {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 400%;
-  height: 180px;
-  background: 
-  url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,60 C150,0 300,120 450,60 C600,0 750,120 900,60 C1050,0 1200,120 1350,60 L1350,120 L0,120 Z' fill='%23ffffff' fill-opacity='0.2'/></svg>") repeat-x;
-  background-size: contain;
-  animation: waveMove 3s linear infinite;
-  z-index: 0;
-}
-
-@keyframes waveMove {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-25%);
-  }
 }

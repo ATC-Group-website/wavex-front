@@ -1,23 +1,116 @@
+/* Hero Section */
 .hero-section {
-  min-height: 60vh;
-  background: linear-gradient(180deg, #4fd0ee 0%, #205e68 100%);
+  padding-top: 100px;
+  background: linear-gradient(135deg, #4cc2dd 0%, #24717d 85%, #174951 100%);
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  overflow: hidden;
 }
 
-.hero-bottom-shape {
+.hero-description {
+  color: #2f545f;
+}
+
+.hero-section .wave-background {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 120px;
-  z-index: 1;
-  pointer-events: none;
+  height: 180px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2400 120' preserveAspectRatio='none'><path d='M0,60 C400,20 800,100 1200,60 C1600,20 2000,100 2400,60 L2400,120 L0,120 Z' fill='%23ffffff' fill-opacity='0.2'/></svg>")
+    repeat-x;
+  background-size: 2400px 100%;
+  animation: waveMove 6s linear infinite;
+  z-index: 0;
 }
 
-.z-2 {
-  z-index: 2;
-  position: relative;
+@keyframes waveMove {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -2400px;
+  }
+}
+
+.wavex-classes-title {
+  color: #4a6c76;
+}
+
+.wavex-classes-description {
+  color: #6c8b95;
+  padding-left: 28px;
+}
+
+.wavex-classes-row {
+  background: #f2f8fa;
+}
+
+.wavex-classes-subtitle {
+  color: #5e818a;
+}
+
+.fa-heart-pulse,
+.fa-person-running,
+.fa-users {
+  color: rgba(69, 129, 139, 1);
+  font-size: 80px;
+}
+
+/* Benefits Section */
+.benefits-section .row {
+  background: #f2f8fa;
+  border-radius: 1rem;
+  padding: 3rem;
+}
+
+.benefits-title {
+  color: #4a6c76;
+}
+
+.benefit-subtitle {
+  color: #5e818a;
+}
+
+/* Programs Section */
+.programs-title {
+  color: #4a6c76;
+  margin-bottom: 1rem;
+}
+
+.title-underline {
+  width: 80px;
+  height: 3px;
+  background: rgba(69, 129, 139, 0.5);
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.program-card {
+  background: #f2f8fa;
+  padding: 2.5rem 1.5rem;
+  border-radius: 1rem;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-name {
+  color: #5e818a;
+  font-weight: 600;
+}
+
+.btn-program {
+  background: rgba(69, 129, 139, 1);
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.btn-program:hover {
+  background: #3a6d77;
+  color: white;
 }

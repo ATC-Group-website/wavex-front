@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  padding-top: 150px;
+  padding-top: 200px;
 }
 
 .container-fluid {
@@ -99,6 +99,10 @@
 
 /* Responsive Design */
 @media (max-width: 991.98px) {
+  .footer {
+    padding-top: 100px;
+  }
+
   .footer-brand {
     text-align: center;
   }
@@ -128,6 +132,10 @@
   .footer-social {
     justify-content: center;
     display: flex;
+  }
+
+  .copyright-row {
+    flex-direction: column-reverse;
   }
 }
 
