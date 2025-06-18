@@ -32,6 +32,25 @@
   }
 }
 
+.booking-title {
+  color: rgba(47, 84, 95, 1);
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.booking-description {
+  color: rgba(69, 129, 139, 1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-left: 28px;
+}
+
+.benefits-title {
+  color: rgba(47, 84, 95, 1);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 /* Booking Section */
 .booking-wrapper {
   max-width: 900px;
@@ -48,6 +67,24 @@
 .booking-subtitle {
   color: #6b7280;
   font-size: 1rem;
+}
+
+.objectives-title {
+  color: #406a73;
+}
+
+.objectives-list li {
+  font-size: 1.2rem;
+  color: #5d7f87;
+  font-weight: 500;
+}
+
+.objective-icon {
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+  display: inline-block;
 }
 
 /* Form Controls */
