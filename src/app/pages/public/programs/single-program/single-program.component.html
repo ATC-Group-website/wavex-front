@@ -134,7 +134,7 @@
 <!-- Booking Section -->
 <section class="booking-section py-5">
   <div class="container">
-    <div class="booking-wrapper bg-white rounded-4 p-4 shadow-sm">
+    <div class="booking-wrapper p-4">
       <!-- Header -->
       <div class="d-flex align-items-center gap-3 mb-4">
         <svg
@@ -156,25 +156,37 @@
       </div>
 
       <!-- Calendar Header -->
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <button class="btn btn-outline-secondary" (click)="prevMonth()">
+      <div class="d-flex justify-content-between align-items-center mb-4 gap-3">
+        <button
+          class="btn btn-outline-secondary"
+          (click)="prevMonth()"
+          [disabled]="isPrevMonthDisabled"
+        >
           <i class="fas fa-chevron-left"></i>
         </button>
 
-        <div class="d-flex gap-2">
+        <div class="d-flex gap-2 year-month-select">
           <select class="form-select month-select" [(ngModel)]="selectedMonth">
-            <option *ngFor="let month of months" [value]="month.value">
+            @for (month of months; track $index) {
+            <option [value]="month.value">
               {{ month.name }}
             </option>
+            }
           </select>
           <select class="form-select year-select" [(ngModel)]="selectedYear">
-            <option *ngFor="let year of years" [value]="year">
+            @for (year of years; track $index) {
+            <option [value]="year">
               {{ year }}
             </option>
+            }
           </select>
         </div>
 
-        <button class="btn btn-outline-secondary" (click)="nextMonth()">
+        <button
+          class="btn btn-outline-secondary"
+          (click)="nextMonth()"
+          [disabled]="isNextMonthDisabled"
+        >
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
@@ -194,19 +206,23 @@
 
         <!-- Calendar Body -->
         <div class="calendar-body">
-          <div class="calendar-week" *ngFor="let week of calendarGrid">
+          @for (week of calendarGrid; track $index) {
+          <div class="calendar-week">
+            @for (day of week; track $index) {
             <div
               class="calendar-day"
-              *ngFor="let day of week"
               [class.today]="day.isToday"
               [class.selected]="day.isSelected"
               [class.other-month]="!day.isCurrentMonth"
               [class.current-month]="day.isCurrentMonth"
+              [class.past]="day.isPast"
               (click)="selectDate(day)"
             >
               {{ formatDate(day.date, "d") }}
             </div>
+            }
           </div>
+          }
         </div>
       </div>
 
@@ -214,8 +230,8 @@
       <div class="time-slots-section">
         <h3 class="time-slots-title mb-4">Pick a time</h3>
         <div class="time-slots-grid">
+          @for (time of availableTimeSlots; track $index) {
           <button
-            *ngFor="let time of timeSlots; let i = index"
             class="btn btn-time-slot"
             [class.selected]="selectedTime === time"
             [disabled]="!selectedDate"
@@ -223,13 +239,16 @@
           >
             {{ time }}
           </button>
+          }
         </div>
       </div>
 
       <!-- Book Now Button -->
-      <div class="text-end mt-4" *ngIf="selectedDate && selectedTime">
+      @if (selectedDate && selectedTime) {
+      <div class="text-end mt-4">
         <button class="btn btn-book-now" (click)="bookNow()">Book Now</button>
       </div>
+      }
     </div>
   </div>
 </section>
