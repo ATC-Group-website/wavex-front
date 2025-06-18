@@ -62,14 +62,14 @@ body {
 }
 /* global hero section style  */
 .hero-img {
-     top: 100px;
-    left: 50px;
-    animation: fadeSlideUp 1s ease-out forwards;
+  top: 100px;
+  left: 50px;
+  animation: fadeSlideUp 1s ease-out forwards;
   opacity: 0;
 }
-.hero-img img{
-height: 32rem;
-width:auto;
+.hero-img img {
+  height: 32rem;
+  width: auto;
 }
 @keyframes fadeSlideUp {
   0% {
@@ -100,7 +100,7 @@ width:auto;
   content: "";
   display: block;
   width: 1px;
-  height: 120px; 
+  height: 120px;
   background-color: white;
 }
 .social-media::before {
@@ -122,8 +122,8 @@ width:auto;
   font-size: 2rem;
   margin-block: 10px;
 }
-.social-icon:hover{
+.social-icon:hover {
   color: #174951;
-   background-color: white;
-   cursor: pointer;
+  background-color: white;
+  cursor: pointer;
 }
