@@ -1,0 +1,115 @@
+<!-- Hero Section -->
+<section id="home" class="hero-section d-flex align-items-center min-vh-100">
+  <div class="container">
+    <div class="row">
+      <div class="text-center" style="max-width: 500px; margin: 0 auto">
+        <h1 class="text-white">WaveX Circuit</h1>
+        <h2 class="hero-description">Book your session now!</h2>
+      </div>
+    </div>
+  </div>
+  <div class="wave-background"></div>
+</section>
+
+<!-- Booking Section -->
+<section class="booking-section py-5">
+  <div class="container">
+    <div class="booking-wrapper bg-white rounded-4 p-4 shadow-sm">
+      <!-- Header -->
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <svg
+          width="32"
+          height="42"
+          viewBox="0 0 32 42"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
+            fill="rgba(69, 129, 139, 1)"
+          />
+        </svg>
+        <div>
+          <h2 class="booking-title mb-0">WaveX Circuit schedule</h2>
+          <p class="booking-subtitle mb-0">Choose a Date</p>
+        </div>
+      </div>
+
+      <!-- Calendar Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <button class="btn btn-outline-secondary" (click)="prevMonth()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="d-flex gap-2">
+          <select class="form-select month-select" [(ngModel)]="selectedMonth">
+            <option *ngFor="let month of months" [value]="month.value">
+              {{ month.name }}
+            </option>
+          </select>
+          <select class="form-select year-select" [(ngModel)]="selectedYear">
+            <option *ngFor="let year of years" [value]="year">
+              {{ year }}
+            </option>
+          </select>
+        </div>
+
+        <button class="btn btn-outline-secondary" (click)="nextMonth()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Calendar Grid -->
+      <div class="calendar-container mb-5">
+        <!-- Days Header -->
+        <div class="calendar-header">
+          <div class="day-header">M</div>
+          <div class="day-header">Tu</div>
+          <div class="day-header">W</div>
+          <div class="day-header">Th</div>
+          <div class="day-header">F</div>
+          <div class="day-header">S</div>
+          <div class="day-header">S</div>
+        </div>
+
+        <!-- Calendar Body -->
+        <div class="calendar-body">
+          <div class="calendar-week" *ngFor="let week of calendarGrid">
+            <div
+              class="calendar-day"
+              *ngFor="let day of week"
+              [class.today]="day.isToday"
+              [class.selected]="day.isSelected"
+              [class.other-month]="!day.isCurrentMonth"
+              [class.current-month]="day.isCurrentMonth"
+              (click)="selectDate(day)"
+            >
+              {{ formatDate(day.date, "d") }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Time Slots -->
+      <div class="time-slots-section">
+        <h3 class="time-slots-title mb-4">Pick a time</h3>
+        <div class="time-slots-grid">
+          <button
+            *ngFor="let time of timeSlots; let i = index"
+            class="btn btn-time-slot"
+            [class.selected]="selectedTime === time"
+            [disabled]="!selectedDate"
+            (click)="selectTime(time)"
+          >
+            {{ time }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Book Now Button -->
+      <div class="text-end mt-4" *ngIf="selectedDate && selectedTime">
+        <button class="btn btn-book-now" (click)="bookNow()">Book Now</button>
+      </div>
+    </div>
+  </div>
+</section>

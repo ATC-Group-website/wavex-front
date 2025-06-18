@@ -34,6 +34,14 @@ export const routes: Routes = [
         title: 'Programs | WaveX - Water-Based Fitness Programs',
       },
       {
+        path: 'programs/test',
+        loadComponent: () =>
+          import(
+            './pages/public/programs/single-program/single-program.component'
+          ).then((m) => m.SingleProgramComponent),
+        title: 'Program Details | WaveX - Water-Based Fitness Programs',
+      },
+      {
         path: 'contact',
         loadComponent: () =>
           import('./pages/public/contact/contact.component').then(
