@@ -66,12 +66,12 @@ export const routes: Routes = [
         title: 'WaveX Kickbox | WaveX - Water-Based Fitness Programs',
       },
       {
-        path: 'shop',
+        path: 'store',
         loadComponent: () =>
-          import('./pages/public/shop/shop.component').then(
-            (m) => m.ShopComponent
+          import('./pages/public/store/store.component').then(
+            (m) => m.StoreComponent
           ),
-        title: 'Shop | WaveX - Shop for Fitness Equipments',
+        title: 'Store | WaveX - Shop for Fitness Equipments',
       },
       {
         path: 'contact',
