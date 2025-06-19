@@ -1,0 +1,463 @@
+/* Hero Section */
+.hero-section {
+  padding-top: 100px;
+  background: linear-gradient(135deg, #4cc2dd 0%, #24717d 85%, #174951 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-description {
+  color: #2f545f;
+}
+
+.hero-section .wave-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2400 120' preserveAspectRatio='none'><path d='M0,60 C400,20 800,100 1200,60 C1600,20 2000,100 2400,60 L2400,120 L0,120 Z' fill='%23ffffff' fill-opacity='0.2'/></svg>")
+    repeat-x;
+  background-size: 2400px 100%;
+  animation: waveMove 6s linear infinite;
+  z-index: 0;
+}
+
+@keyframes waveMove {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: -2400px;
+  }
+}
+
+.booking-title {
+  color: rgba(47, 84, 95, 1);
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.booking-description {
+  color: rgba(69, 129, 139, 1);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-left: 28px;
+}
+
+.benefits-title {
+  color: rgba(47, 84, 95, 1);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+/* Content Layout */
+.content-wrapper {
+  padding: 1rem 0;
+}
+
+.program-info {
+  text-align: left;
+}
+
+.program-image {
+  border-radius: 15px;
+  max-height: 500px;
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.program-image:hover {
+  transform: translateY(-2px);
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+/* Mobile Image Styles */
+.program-image-mobile {
+  border-radius: 15px;
+  max-height: 300px;
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.mobile-image-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.benefits-section {
+  margin-top: 2rem;
+}
+
+/* Booking Section */
+
+.booking-section .container {
+  background-color: rgba(73, 176, 198, 0.1);
+  border-radius: 15px;
+}
+
+.booking-title {
+  color: #4a6c76;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.booking-subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+}
+
+.objectives-title {
+  color: #406a73;
+}
+
+.objectives-list li {
+  font-size: 1.2rem;
+  color: #5d7f87;
+  font-weight: 500;
+}
+
+.objective-icon {
+  width: 18px;
+  height: 26px;
+  min-width: 18px;
+  min-height: 26px;
+  display: inline-block;
+}
+
+/* Form Controls */
+.month-select,
+.year-select {
+  background-color: rgba(69, 129, 139, 1);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-weight: 600;
+  font-size: 1rem;
+  min-width: 120px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  cursor: pointer;
+}
+
+.month-select:focus,
+.year-select:focus {
+  background-color: rgba(69, 129, 139, 0.9);
+  border: none;
+  box-shadow: 0 0 0 3px rgba(69, 129, 139, 0.2);
+  outline: none;
+}
+
+.btn-outline-secondary {
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  background: white;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #f9fafb;
+  border-color: #d1d5db;
+  color: #6b7280;
+}
+
+/* Calendar Styles */
+.calendar-container {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.day-header {
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.calendar-body {
+  background: white;
+}
+
+.calendar-week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.calendar-week:last-child {
+  border-bottom: none;
+}
+
+.calendar-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-right: 1px solid #f3f4f6;
+  color: #1f2937;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  min-height: 48px;
+}
+
+.calendar-day:last-child {
+  border-right: none;
+}
+
+.calendar-day.current-month:hover {
+  background-color: #f3f4f6;
+}
+
+.calendar-day.other-month {
+  color: #d1d5db;
+  cursor: default;
+}
+
+.calendar-day.other-month:hover {
+  background-color: transparent;
+}
+
+.calendar-day.past {
+  color: #d1d5db;
+  cursor: not-allowed;
+  background-color: #f9fafb;
+}
+
+.calendar-day.past:hover {
+  background-color: #f9fafb;
+  color: #d1d5db;
+}
+
+.calendar-day.today {
+  background-color: #e5f3f6;
+  color: #0f766e;
+  font-weight: 600;
+}
+
+.calendar-day.selected {
+  background-color: rgba(69, 129, 139, 1);
+  color: white;
+  font-weight: 600;
+}
+
+.calendar-day.selected:hover {
+  background-color: rgba(69, 129, 139, 0.9);
+  color: white;
+}
+
+/* Time Slots */
+.time-slots-title {
+  color: #4a6c76;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.time-slots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.btn-time-slot {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-time-slot:hover:not(:disabled) {
+  background-color: #f3f4f6;
+  border-color: #d1d5db;
+  color: #4b5563;
+}
+
+.btn-time-slot:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-time-slot.selected {
+  background-color: rgba(69, 129, 139, 1);
+  border-color: rgba(69, 129, 139, 1);
+  color: white;
+}
+
+.btn-time-slot.selected:hover {
+  background-color: rgba(69, 129, 139, 0.9);
+  border-color: rgba(69, 129, 139, 0.9);
+  color: white;
+}
+
+/* Book Now Button */
+.btn-book-now {
+  background-color: rgba(69, 129, 139, 1);
+  border: none;
+  color: white;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.btn-book-now:hover {
+  background-color: rgba(69, 129, 139, 0.9);
+  color: white;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .booking-title {
+    font-size: 1.8rem;
+  }
+
+  .benefits-title {
+    font-size: 1.5rem;
+  }
+
+  .program-image {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content-wrapper {
+    padding: 0.5rem 0;
+  }
+
+  .program-info {
+    margin-bottom: 2rem;
+  }
+
+  .benefits-section {
+    margin-top: 1.5rem;
+  }
+
+  .program-image {
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-wrapper {
+    margin: 0 1rem;
+  }
+
+  .year-month-select {
+    flex-wrap: wrap;
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 8px;
+  }
+
+  .calendar-day {
+    font-size: 0.875rem;
+    min-height: 40px;
+  }
+
+  .day-header {
+    padding: 8px;
+    font-size: 0.75rem;
+  }
+
+  /* Content Section Responsive */
+  .booking-title {
+    font-size: 1.5rem;
+  }
+
+  .booking-description {
+    font-size: 1rem;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .benefits-title {
+    font-size: 1.3rem;
+  }
+
+  .objectives-list li {
+    font-size: 1rem;
+  }
+
+  .objective-icon {
+    width: 16px;
+    height: 22px;
+    min-width: 16px;
+    min-height: 22px;
+  }
+
+  .program-image {
+    max-height: 300px;
+    margin-top: 1rem;
+  }
+
+  /* Mobile image responsive adjustments */
+  .program-image-mobile {
+    max-height: 220px;
+  }
+
+  .mobile-image-wrapper {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .benefits-section {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .booking-title {
+    font-size: 1.3rem;
+  }
+
+  .booking-description {
+    font-size: 0.9rem;
+  }
+
+  .benefits-title {
+    font-size: 1.2rem;
+  }
+
+  .objectives-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .program-image {
+    max-height: 250px;
+    border-radius: 12px;
+  }
+
+  .content-wrapper {
+    padding: 0;
+  }
+
+  .program-info {
+    margin-bottom: 1.5rem;
+  }
+}

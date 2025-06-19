@@ -51,6 +51,51 @@
   font-weight: 600;
 }
 
+/* Content Layout */
+.content-wrapper {
+  padding: 1rem 0;
+}
+
+.program-info {
+  text-align: left;
+}
+
+.program-image {
+  border-radius: 15px;
+  max-height: 500px;
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.program-image:hover {
+  transform: translateY(-2px);
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+/* Mobile Image Styles */
+.program-image-mobile {
+  border-radius: 15px;
+  max-height: 300px;
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.mobile-image-wrapper {
+  position: relative;
+  text-align: center;
+}
+
+.benefits-section {
+  margin-top: 2rem;
+}
+
 /* Booking Section */
 
 .booking-section .container {
@@ -284,6 +329,38 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1200px) {
+  .booking-title {
+    font-size: 1.8rem;
+  }
+
+  .benefits-title {
+    font-size: 1.5rem;
+  }
+
+  .program-image {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .content-wrapper {
+    padding: 0.5rem 0;
+  }
+
+  .program-info {
+    margin-bottom: 2rem;
+  }
+
+  .benefits-section {
+    margin-top: 1.5rem;
+  }
+
+  .program-image {
+    max-height: 350px;
+  }
+}
+
 @media (max-width: 768px) {
   .booking-wrapper {
     margin: 0 1rem;
@@ -306,5 +383,81 @@
   .day-header {
     padding: 8px;
     font-size: 0.75rem;
+  }
+
+  /* Content Section Responsive */
+  .booking-title {
+    font-size: 1.5rem;
+  }
+
+  .booking-description {
+    font-size: 1rem;
+    padding-left: 0;
+    margin-top: 0.5rem;
+  }
+
+  .benefits-title {
+    font-size: 1.3rem;
+  }
+
+  .objectives-list li {
+    font-size: 1rem;
+  }
+
+  .objective-icon {
+    width: 16px;
+    height: 22px;
+    min-width: 16px;
+    min-height: 22px;
+  }
+
+  .program-image {
+    max-height: 300px;
+    margin-top: 1rem;
+  }
+
+  /* Mobile image responsive adjustments */
+  .program-image-mobile {
+    max-height: 220px;
+  }
+
+  .mobile-image-wrapper {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .benefits-section {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .booking-title {
+    font-size: 1.3rem;
+  }
+
+  .booking-description {
+    font-size: 0.9rem;
+  }
+
+  .benefits-title {
+    font-size: 1.2rem;
+  }
+
+  .objectives-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .program-image {
+    max-height: 250px;
+    border-radius: 12px;
+  }
+
+  .content-wrapper {
+    padding: 0;
+  }
+
+  .program-info {
+    margin-bottom: 1.5rem;
   }
 }

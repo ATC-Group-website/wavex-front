@@ -34,12 +34,44 @@ export const routes: Routes = [
         title: 'Programs | WaveX - Water-Based Fitness Programs',
       },
       {
-        path: 'programs/test',
+        path: 'programs/wavex-circuit',
         loadComponent: () =>
           import(
-            './pages/public/programs/single-program/single-program.component'
-          ).then((m) => m.SingleProgramComponent),
-        title: 'Program Details | WaveX - Water-Based Fitness Programs',
+            './pages/public/programs/wavex-circuit/wavex-circuit.component'
+          ).then((m) => m.WavexCircuitComponent),
+        title: 'WaveX Circuit | WaveX - Water-Based Fitness Programs',
+      },
+      {
+        path: 'programs/wavex-flow',
+        loadComponent: () =>
+          import(
+            './pages/public/programs/wavex-flow/wavex-flow.component'
+          ).then((m) => m.WavexFlowComponent),
+        title: 'WaveX Flow | WaveX - Water-Based Fitness Programs',
+      },
+      {
+        path: 'programs/wavex-core',
+        loadComponent: () =>
+          import(
+            './pages/public/programs/wavex-core/wavex-core.component'
+          ).then((m) => m.WavexCoreComponent),
+        title: 'WaveX Core | WaveX - Water-Based Fitness Programs',
+      },
+      {
+        path: 'programs/wavex-kickbox',
+        loadComponent: () =>
+          import(
+            './pages/public/programs/wavex-kickbox/wavex-kickbox.component'
+          ).then((m) => m.WavexKickboxComponent),
+        title: 'WaveX Kickbox | WaveX - Water-Based Fitness Programs',
+      },
+      {
+        path: 'shop',
+        loadComponent: () =>
+          import('./pages/public/shop/shop.component').then(
+            (m) => m.ShopComponent
+          ),
+        title: 'Shop | WaveX - Shop for Fitness Equipments',
       },
       {
         path: 'contact',

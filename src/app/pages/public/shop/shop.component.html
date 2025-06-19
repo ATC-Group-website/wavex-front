@@ -1,0 +1,355 @@
+<section id="home" class="hero-section d-flex align-items-center min-vh-100">
+  <div class="container">
+    <div class="row">
+      <div class="text-center" style="max-width: 500px; margin: 0 auto">
+        <h1 class="text-white hero-content">Wavex Shop</h1>
+        <h2 class="hero-description hero-content">
+          Everything you need to run WaveX Classes
+        </h2>
+      </div>
+    </div>
+  </div>
+  <div class="wave-background"></div>
+  <div class="social-media position-absolute">
+    <div class="facebook social-icon">
+      <i class="fa-brands fa-facebook-f"></i>
+    </div>
+    <div class="insta social-icon">
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <div class="twitter social-icon">
+      <i class="fa-brands fa-x-twitter"></i>
+    </div>
+  </div>
+</section>
+
+<section class="shop-section py-5">
+  <div class="container">
+    <!-- Title Section -->
+    <div class="d-flex gap-2 mb-4">
+      <svg
+        width="22"
+        height="30"
+        viewBox="0 0 32 42"
+        fill="none"
+        class="mt-1"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
+          fill="rgba(69, 129, 139, 1)"
+        />
+      </svg>
+      <h2 class="shop-title">Find all your needs with waveX</h2>
+    </div>
+
+    <!-- Search Bar and Filter Controls -->
+    <div class="search-filter-container mb-4">
+      <div class="row align-items-center">
+        <div class="">
+          <div class="search-wrapper">
+            <input
+              type="text"
+              class="form-control search-input"
+              placeholder="Search here"
+              [(ngModel)]="searchTerm"
+              (input)="onSearch()"
+            />
+            <i class="fas fa-search search-icon"></i>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <button
+            class="btn filter-toggle-btn d-md-none w-100"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#filterOffcanvas"
+          >
+            <i class="fas fa-filter me-2"></i>
+            Filter
+            <i class="fas fa-chevron-down ms-auto"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Desktop Filter Sidebar -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="filter-sidebar">
+          <div class="filter-header">
+            <i class="fas fa-filter me-2"></i>
+            <h4>All Products</h4>
+          </div>
+          <ul class="filter-list">
+            @for (category of filterCategories; track category.value) {
+            <li
+              class="filter-item"
+              [class.active]="currentFilter === category.value"
+              (click)="selectFilter(category.value)"
+            >
+              <i [class]="category.icon + ' filter-icon'"></i>
+              <span>{{ category.name }}</span>
+            </li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div class="col-lg-9">
+        <!-- Results Info -->
+        <div class="results-info mb-3">
+          <p class="text-muted">
+            Showing {{ displayedProducts.length }} of
+            {{ filteredProducts.length }} products @if (currentFilter !== 'all')
+            {
+            <span> in {{ currentFilter }}</span>
+            } @if (searchTerm) {
+            <span> for "{{ searchTerm }}"</span>
+            }
+          </p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid">
+          @for (product of displayedProducts; track product.id) {
+          <div
+            class="product-card"
+            data-bs-toggle="modal"
+            data-bs-target="#productDetailModal"
+            (click)="setSelectedProduct(product)"
+          >
+            <div class="product-image">
+              <img [src]="product.image" [alt]="product.name" />
+            </div>
+            <div class="product-info">
+              <h5 class="product-name">{{ product.name }}</h5>
+              <p class="product-price">{{ product.price }} LE</p>
+              <button
+                class="btn btn-add-to-cart"
+                (click)="addToCart(product); $event.stopPropagation()"
+              >
+                Add To Cart
+              </button>
+            </div>
+          </div>
+          }
+
+          <!-- No products message -->
+          @if (displayedProducts.length === 0) {
+          <div class="no-products">
+            <div class="text-center py-5">
+              <i class="fas fa-search fa-3x text-muted mb-3"></i>
+              <h4 class="text-muted">No products found</h4>
+              <p class="text-muted">
+                @if (searchTerm) { Try searching with different keywords or }
+                @if (currentFilter !== 'all') { try a different category } @else
+                { check back later for new products }
+              </p>
+              @if (searchTerm || currentFilter !== 'all') {
+              <button
+                class="btn btn-outline-primary"
+                (click)="searchTerm = ''; selectFilter('all')"
+              >
+                Clear filters
+              </button>
+              }
+            </div>
+          </div>
+          }
+        </div>
+
+        <!-- Pagination -->
+        @if (totalPages > 1) {
+        <div class="pagination-container">
+          <nav aria-label="Product pagination">
+            <ul class="pagination mt-auto justify-content-center gap-2">
+              <li class="page-item" [class.disabled]="currentPage === 1">
+                <button
+                  class="page-link"
+                  (click)="prevPage()"
+                  [disabled]="currentPage === 1"
+                >
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+              </li>
+
+              @for (page of getPageNumbers(); track page) {
+              <li class="page-item" [class.active]="currentPage === page">
+                <button class="page-link" (click)="goToPage(page)">
+                  {{ page }}
+                </button>
+              </li>
+              }
+
+              <li
+                class="page-item"
+                [class.disabled]="currentPage === totalPages"
+              >
+                <button
+                  class="page-link"
+                  (click)="nextPage()"
+                  [disabled]="currentPage === totalPages"
+                >
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Mobile Filter Offcanvas -->
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="filterOffcanvas"
+  aria-labelledby="filterOffcanvasLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="filterOffcanvasLabel">
+      <i class="fas fa-filter me-2"></i>
+      Filter Products
+    </h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="filter-list">
+      @for (category of filterCategories; track category.value) {
+      <li
+        class="filter-item"
+        [class.active]="currentFilter === category.value"
+        (click)="selectFilter(category.value)"
+        data-bs-dismiss="offcanvas"
+      >
+        <i [class]="category.icon + ' filter-icon'"></i>
+        <span>{{ category.name }}</span>
+      </li>
+      }
+    </ul>
+  </div>
+</div>
+
+<!-- Product Detail Modal -->
+<!-- <div
+  class="modal fade"
+  id="productDetailModal"
+  tabindex="-1"
+  aria-labelledby="productDetailModalLabel"
+  aria-hidden="true"
+>
+  <div
+    class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+  >
+    <div class="modal-content rounded-3 shadow-lg">
+      <div class="modal-header border-0 pb-0">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <div class="modal-body p-4">
+        @if (selectedProduct) {
+        <div class="container-fluid">
+          <div class="row g-4">
+            <div class="col-lg-6 col-md-12">
+              <div
+                class="d-flex flex-row gap-3 justify-content-center align-items-center h-100"
+              >
+                <div class="product-modal-image">
+                  <img
+                    [src]="selectedProduct.image"
+                    [alt]="selectedProduct.name"
+                    class="img-fluid rounded-3"
+                  />
+                </div>
+                <div class="product-modal-image">
+                  <img
+                    [src]="selectedProduct.image"
+                    [alt]="selectedProduct.name"
+                    class="img-fluid rounded-3"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+              <div class="d-flex flex-column h-100">
+                <h2 class="product-modal-title mb-3">
+                  {{ selectedProduct.name }}
+                </h2>
+
+                <h3 class="product-modal-price text-danger mb-4">
+                  {{ selectedProduct.price }} LE
+                </h3>
+
+                <div class="quantity-selector mb-4">
+                  <label class="form-label fw-semibold mb-2">Quantity:</label>
+                  <div class="d-flex align-items-center gap-3">
+                    <button
+                      class="btn btn-outline-secondary quantity-btn rounded-circle"
+                      (click)="decreaseQuantity()"
+                      [disabled]="modalQuantity <= 1"
+                    >
+                      <i class="fas fa-minus"></i>
+                    </button>
+                    <span class="quantity-display fw-bold fs-5">{{
+                      modalQuantity
+                    }}</span>
+                    <button
+                      class="btn btn-outline-secondary quantity-btn rounded-circle"
+                      (click)="increaseQuantity()"
+                    >
+                      <i class="fas fa-plus"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <div class="product-description mb-4 flex-grow-1">
+                  <h5 class="fw-semibold mb-2">Description</h5>
+                  <p class="text-muted lh-lg">
+                    {{
+                      selectedProduct.description ||
+                        "This is a high-quality product designed for optimal performance and durability. Perfect for training and professional use, featuring advanced materials and ergonomic design for maximum comfort and effectiveness."
+                    }}
+                  </p>
+                </div>
+
+                <div class="d-flex flex-column gap-3">
+                  <button
+                    class="btn btn-add-to-cart-modal btn-lg"
+                    (click)="addToCartFromModal()"
+                    data-bs-dismiss="modal"
+                  >
+                    Add To Cart
+                  </button>
+                  <button
+                    class="btn btn-checkout-now btn-lg"
+                    (click)="checkoutNow()"
+                    data-bs-dismiss="modal"
+                  >
+                    CheckOut Now
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+</div> -->

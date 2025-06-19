@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
   startOfMonth,
@@ -38,13 +37,12 @@ interface MonthData {
 }
 
 @Component({
-  selector: 'app-single-program',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
-  templateUrl: './single-program.component.html',
-  styleUrl: './single-program.component.css',
+  selector: 'app-wavex-core',
+  imports: [FormsModule],
+  templateUrl: './wavex-core.component.html',
+  styleUrl: './wavex-core.component.css',
 })
-export class SingleProgramComponent implements OnInit {
+export class WavexCoreComponent implements OnInit {
   today = new Date();
   currentDate = new Date();
   selectedDate: Date | null = null;
@@ -281,9 +279,5 @@ export class SingleProgramComponent implements OnInit {
     this.generateMonths();
     this.generateTimeSlots();
     this.generateCalendar();
-
-    console.log('Available years:', this.years);
-    console.log('Available months:', this.months);
-    console.log('Available time slots:', this.availableTimeSlots);
   }
 }

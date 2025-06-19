@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SingleProgramComponent } from './single-program.component';
+import { WavexFlowComponent } from './wavex-flow.component';
 
-describe('SingleProgramComponent', () => {
-  let component: SingleProgramComponent;
-  let fixture: ComponentFixture<SingleProgramComponent>;
+describe('WavexFlowComponent', () => {
+  let component: WavexFlowComponent;
+  let fixture: ComponentFixture<WavexFlowComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SingleProgramComponent]
+      imports: [WavexFlowComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SingleProgramComponent);
+    fixture = TestBed.createComponent(WavexFlowComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
