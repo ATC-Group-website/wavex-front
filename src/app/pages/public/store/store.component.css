@@ -308,9 +308,24 @@
 }
 
 /* Mobile Filter Offcanvas */
+.offcanvas {
+  z-index: 1060 !important; /* Higher than Bootstrap's fixed navbar z-index (1030) */
+  top: 0 !important;
+}
+
+.offcanvas.show {
+  z-index: 1060 !important;
+}
+
+.offcanvas-backdrop {
+  z-index: 1055 !important; /* Just below the offcanvas but above navbar */
+}
+
 .offcanvas-header {
   background-color: rgba(69, 129, 139, 1);
   color: white;
+  padding-top: 80px; /* Account for fixed header height */
+  margin-top: 0;
 }
 
 .offcanvas-title {
@@ -320,6 +335,11 @@
 
 .btn-close {
   filter: invert(1);
+}
+
+/* Alternative approach - add padding to offcanvas body instead */
+.offcanvas-body {
+  padding-top: 1rem;
 }
 
 /* Product Detail Modal Styles */
