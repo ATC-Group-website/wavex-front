@@ -10,7 +10,7 @@
   flex-direction: column;
   position: relative;
   overflow-x: clip;
-  z-index: 1;
+  z-index: auto;
 }
 
 /* Ensure the main content area takes up available space */

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { HomeComponent } from './pages/public/home/home.component';
 
 export const routes: Routes = [
   {
@@ -11,10 +12,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
-        loadComponent: () =>
-          import('./pages/public/home/home.component').then(
-            (m) => m.HomeComponent
-          ),
+        component: HomeComponent,
         title: 'Home | WaveX - Transforming Fitness Through Water',
       },
       {
@@ -72,6 +70,22 @@ export const routes: Routes = [
             (m) => m.StoreComponent
           ),
         title: 'Store | WaveX - Shop for Fitness Equipments',
+      },
+      {
+        path: 'cart',
+        loadComponent: () =>
+          import('./pages/public/cart/cart.component').then(
+            (m) => m.CartComponent
+          ),
+        title: 'Cart | WaveX - Your Shopping Cart',
+      },
+      {
+        path: 'checkout',
+        loadComponent: () =>
+          import('./pages/public/checkout/checkout.component').then(
+            (m) => m.CheckoutComponent
+          ),
+        title: 'Checkout | WaveX - Your Checkout',
       },
       {
         path: 'contact',

@@ -184,7 +184,7 @@
   border: 1px solid #f3f4f6;
   transition: all 0.3s ease;
   height: fit-content;
-  /* cursor: pointer; */
+  cursor: pointer;
 }
 
 .product-card:hover {
@@ -343,21 +343,28 @@
 }
 
 /* Product Detail Modal Styles */
-/* .modal {
+.modal {
+  z-index: 1055 !important;
   --bs-modal-backdrop-opacity: 0.25;
 }
 
 .modal-backdrop {
-  background-color: rgba(0, 0, 0, 0.25) !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  z-index: 1050 !important;
 }
 
 .modal-backdrop.show {
-  opacity: 0.25 !important;
+  opacity: 0.5 !important;
+}
+
+.modal-dialog {
+  z-index: 1060 !important;
 }
 
 .modal-content {
   border: none;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  z-index: 1060 !important;
 }
 
 .modal-header .btn-close {
@@ -604,4 +611,4 @@
     width: 120px;
     height: 100px;
   }
-} */
+}

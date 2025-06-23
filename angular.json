@@ -37,7 +37,8 @@
             "prerender": true,
             "ssr": {
               "entry": "src/server.ts"
-            }
+            },
+            "allowedCommonJsDependencies": ["aos"]
           },
           "configurations": {
             "production": {

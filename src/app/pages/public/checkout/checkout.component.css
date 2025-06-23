@@ -1,0 +1,447 @@
+/* Checkout Section Styling */
+.checkout-section {
+  min-height: 100vh;
+  padding-top: 100px; /* Account for fixed header */
+}
+
+.container {
+  margin: 5rem auto;
+  background-color: rgba(73, 176, 198, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+}
+
+/* Page Title */
+.checkout-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgba(47, 84, 95, 1);
+  margin-bottom: 0;
+}
+
+/* Payment Section */
+.payment-section {
+  background: white;
+  border-radius: 15px;
+  padding: 0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Payment Header */
+.payment-header {
+  background-color: rgba(47, 84, 95, 1);
+  padding: 1.5rem;
+  margin: 0;
+}
+
+.payment-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+/* Payment Options Container */
+.payment-options {
+  padding: 2rem;
+}
+
+/* Payment Option Buttons */
+.payment-btn {
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: 2px solid transparent;
+}
+
+.apple-pay {
+  background-color: #000;
+  color: white;
+  border-color: #000;
+}
+
+.apple-pay:hover {
+  background-color: #333;
+  color: white;
+}
+
+.google-pay {
+  background-color: #4285f4;
+  color: white;
+  border-color: #4285f4;
+}
+
+.google-pay:hover {
+  background-color: #3367d6;
+  color: white;
+}
+
+/* Card Payment Section */
+.card-payment {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-payment:hover {
+  border-color: #4a90a4;
+}
+
+.card-payment-header {
+  background-color: #10b981;
+  padding: 1rem 1.5rem;
+  color: white;
+}
+
+.card-payment-body {
+  padding: 1.5rem;
+  background-color: #f8fffe;
+}
+
+.card-description {
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+/* Card Form Styling */
+.card-form .form-control {
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  padding: 0.75rem 1rem;
+  transition: all 0.3s ease;
+}
+
+.card-form .form-control:focus {
+  border-color: #4a90a4;
+  box-shadow: 0 0 0 3px rgba(74, 144, 164, 0.1);
+}
+
+.card-form .form-label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* Banking Payment Section */
+.banking-payment {
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.banking-payment:hover {
+  border-color: #4a90a4;
+}
+
+/* Continue Button */
+.btn-continue {
+  background-color: rgba(69, 129, 139, 1);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-continue:hover {
+  background-color: rgba(69, 129, 139, 0.8);
+  color: white;
+}
+
+/* Order Summary */
+.order-summary {
+  position: sticky;
+  top: 100px;
+}
+
+.summary-card {
+  background-color: #e8f4f8;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(74, 144, 164, 0.2);
+}
+
+.summary-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-align: center;
+}
+
+/* Total Section */
+.total-section {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.total-label {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.total-price {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #dc2626;
+}
+
+/* Product List */
+.product-list {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.product-list-title {
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 1rem;
+}
+
+.product-item {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.product-item:last-child {
+  border-bottom: none;
+}
+
+.product-name {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+.product-price {
+  font-weight: 600;
+  color: #4a5568;
+}
+
+/* Secure Notice */
+.secure-notice {
+  background: rgba(40, 167, 69, 0.1);
+  border: 1px solid rgba(40, 167, 69, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.secure-title {
+  color: #28a745;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.secure-text {
+  color: #4a5568;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1199.98px) {
+  .checkout-title {
+    font-size: 2.25rem;
+  }
+
+  .checkout-container {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .order-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .checkout-title {
+    font-size: 2rem;
+  }
+
+  .checkout-container {
+    padding: 2rem 1rem;
+  }
+
+  .payment-options {
+    padding: 1.5rem;
+  }
+
+  .summary-card {
+    padding: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .btn-continue {
+    font-size: 1.1rem;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .checkout-section {
+    padding-top: 100px;
+  }
+
+  .checkout-title {
+    font-size: 1.75rem;
+  }
+
+  .checkout-container {
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+  }
+
+  .payment-title {
+    font-size: 1.25rem;
+  }
+
+  .payment-options {
+    padding: 1rem;
+  }
+
+  .payment-btn {
+    padding: 0.875rem 1rem;
+    font-size: 1rem;
+  }
+
+  .card-payment-body {
+    padding: 1rem;
+  }
+
+  .summary-card {
+    padding: 1.25rem;
+  }
+
+  .summary-title {
+    font-size: 1.5rem;
+  }
+
+  .total-label {
+    font-size: 1.1rem;
+  }
+
+  .total-price {
+    font-size: 1.5rem;
+  }
+
+  .btn-continue {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .checkout-section {
+    padding-top: 90px;
+  }
+
+  .checkout-title {
+    font-size: 1.5rem;
+  }
+
+  .checkout-container {
+    padding: 1rem 0.75rem;
+  }
+
+  .payment-header {
+    padding: 1rem;
+  }
+
+  .payment-title {
+    font-size: 1.1rem;
+  }
+
+  .payment-options {
+    padding: 0.75rem;
+  }
+
+  .payment-btn {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .card-payment-header {
+    padding: 0.875rem 1rem;
+  }
+
+  .card-payment-body {
+    padding: 0.875rem;
+  }
+
+  .summary-card {
+    padding: 1rem;
+  }
+
+  .total-section,
+  .product-list {
+    padding: 1rem;
+  }
+
+  .secure-notice {
+    padding: 1rem;
+  }
+
+  .btn-continue {
+    font-size: 0.9rem;
+    padding: 0.625rem 1rem;
+  }
+}
+
+/* Animation Effects */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.payment-section,
+.summary-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.payment-section {
+  animation-delay: 0.1s;
+}
+
+.summary-card {
+  animation-delay: 0.2s;
+}
+
+/* Focus States */
+.btn:focus,
+.form-control:focus {
+  outline: none;
+}
+
+/* Payment Option Selection States */
+.payment-option.selected .payment-btn {
+  border-color: #4a90a4;
+  background-color: rgba(74, 144, 164, 0.1);
+}
+
+.payment-option.selected .card-payment,
+.payment-option.selected .banking-payment {
+  border-color: #4a90a4;
+  background-color: rgba(74, 144, 164, 0.05);
+}

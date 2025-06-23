@@ -1,0 +1,261 @@
+<section class="checkout-section py-5">
+  <div class="container">
+    <!-- Page Title with Icon -->
+    <div
+      class="text-center mb-5 d-flex justify-content-center align-items-center"
+    >
+      <svg
+        width="22"
+        height="30"
+        viewBox="0 0 32 42"
+        fill="none"
+        class="mt-1 me-2"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
+          fill="rgba(69, 129, 139, 1)"
+        />
+      </svg>
+      <h1 class="checkout-title">CheckOut Now</h1>
+    </div>
+
+    <!-- Main Content Row -->
+    <div class="row g-4">
+      <!-- Payment Options Section (Left Column) -->
+      <div class="col-lg-8 col-md-12 order-lg-1 order-2">
+        <div class="payment-section">
+          <!-- Payment Section Header -->
+          <div class="payment-header">
+            <h3 class="payment-title">Choose one of the payment options</h3>
+          </div>
+
+          <!-- Payment Options -->
+          <div class="payment-options">
+            <!-- Apple Pay -->
+            <div class="payment-option mb-3">
+              <button class="btn payment-btn apple-pay w-100">
+                <div class="d-flex align-items-center justify-content-center">
+                  <i class="fab fa-apple me-3" style="font-size: 1.5rem"></i>
+                  <span class="payment-text">Apple Pay</span>
+                </div>
+              </button>
+            </div>
+
+            <!-- Google Pay -->
+            <div class="payment-option mb-3">
+              <button class="btn payment-btn google-pay w-100">
+                <div class="d-flex align-items-center justify-content-center">
+                  <i class="fab fa-google me-3" style="font-size: 1.5rem"></i>
+                  <span class="payment-text">Google Pay</span>
+                </div>
+              </button>
+            </div>
+
+            <!-- Pay by Card -->
+            <div class="payment-option mb-3">
+              <div class="card-payment">
+                <div class="card-payment-header">
+                  <div
+                    class="d-flex align-items-center justify-content-between"
+                  >
+                    <span class="fw-bold">Pay by card</span>
+                    <div class="card-logos">
+                      <i
+                        class="fab fa-cc-visa me-2"
+                        style="font-size: 1.5rem"
+                      ></i>
+                      <i
+                        class="fab fa-cc-mastercard"
+                        style="font-size: 1.5rem"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-payment-body">
+                  <p class="card-description">
+                    To pay, please enter your VISA, MasterCard or Maestro
+                    payment card information.
+                  </p>
+
+                  <!-- Card Form -->
+                  <form class="card-form">
+                    <div class="row g-3">
+                      <div class="col-12">
+                        <label for="cardNumber" class="form-label"
+                          >Card Number</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cardNumber"
+                          placeholder="1234 5678 9012 3456"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label for="expiryDate" class="form-label"
+                          >Expiry Date</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="expiryDate"
+                          placeholder="MM/YY"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cvv"
+                          placeholder="123"
+                        />
+                      </div>
+                      <div class="col-12">
+                        <label for="cardholderName" class="form-label"
+                          >Cardholder Name</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="cardholderName"
+                          placeholder="John Doe"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Internet Banking -->
+            <div class="payment-option mb-4">
+              <div class="banking-payment">
+                <div class="d-flex align-items-center p-3">
+                  <i
+                    class="fas fa-university me-3"
+                    style="font-size: 1.5rem; color: #4a90a4"
+                  ></i>
+                  <div>
+                    <h6 class="mb-1 fw-bold">Pay via internet banking</h6>
+                    <p class="mb-0 text-muted small">
+                      Secure online banking payment through your bank's website
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Continue Button -->
+          <div class="text-center mt-4">
+            <button class="btn btn-continue w-100">
+              <i class="fas fa-lock me-2"></i>
+              Continue to Payment
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Order Summary Section (Right Column) -->
+      <div class="col-lg-4 col-md-12 order-lg-2 order-1">
+        <div class="order-summary sticky-top">
+          <div class="summary-card">
+            <h4 class="summary-title mb-4">Order Summary</h4>
+
+            <!-- Total Price -->
+            <div class="total-section mb-4">
+              <div class="d-flex justify-content-between align-items-center">
+                <span class="total-label">Total:</span>
+                <span class="total-price">£326.67</span>
+              </div>
+            </div>
+
+            <!-- Product List -->
+            <div class="product-list mb-4">
+              <h6 class="product-list-title">Items in your order:</h6>
+
+              <div class="product-item">
+                <div class="d-flex justify-content-between">
+                  <div class="product-info">
+                    <span class="product-name">WaveX Balance Board</span>
+                    <small class="text-muted d-block">Qty: 1</small>
+                  </div>
+                  <span class="product-price">£249.00</span>
+                </div>
+              </div>
+
+              <div class="product-item">
+                <div class="d-flex justify-content-between">
+                  <div class="product-info">
+                    <span class="product-name">WaveX Grip Socks</span>
+                    <small class="text-muted d-block">Qty: 2</small>
+                  </div>
+                  <span class="product-price">£25.98</span>
+                </div>
+              </div>
+
+              <div class="product-item">
+                <div class="d-flex justify-content-between">
+                  <div class="product-info">
+                    <span class="product-name">WaveX Resistance Band</span>
+                    <small class="text-muted d-block">Qty: 1</small>
+                  </div>
+                  <span class="product-price">£21.99</span>
+                </div>
+              </div>
+
+              <hr class="my-3" />
+
+              <!-- Subtotal and Total -->
+              <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal:</span>
+                <span>£296.97</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Shipping:</span>
+                <span class="text-success">Free</span>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Tax:</span>
+                <span>£29.70</span>
+              </div>
+              <div
+                class="d-flex justify-content-between fw-bold border-top pt-2"
+              >
+                <span>Total:</span>
+                <span class="total-price">£326.67</span>
+              </div>
+            </div>
+
+            <!-- Secure Payment Notice -->
+            <div class="secure-notice">
+              <div class="d-flex align-items-start">
+                <i
+                  class="fas fa-shield-alt me-3 mt-1"
+                  style="color: #28a745"
+                ></i>
+                <div>
+                  <h6 class="secure-title">Secure Payment</h6>
+                  <p class="secure-text">
+                    Your payment information is encrypted and secure. We use
+                    industry-standard SSL encryption to protect your data.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Back to Cart Button -->
+            <div class="text-center mt-4">
+              <a href="/cart" class="btn btn-outline-secondary w-100">
+                <i class="fas fa-arrow-left me-2"></i>
+                Back to Cart
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

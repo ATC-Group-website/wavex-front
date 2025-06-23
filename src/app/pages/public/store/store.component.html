@@ -115,12 +115,6 @@
             <div class="product-info">
               <h5 class="product-name">{{ product.name }}</h5>
               <p class="product-price">£{{ product.price }}</p>
-              <button
-                class="btn btn-add-to-cart"
-                (click)="addToCart(product); $event.stopPropagation()"
-              >
-                Add To Cart
-              </button>
             </div>
           </div>
           }
@@ -230,7 +224,7 @@
 </div>
 
 <!-- Product Detail Modal -->
-<!-- <div
+<div
   class="modal fade"
   id="productDetailModal"
   tabindex="-1"
@@ -282,7 +276,7 @@
                 </h2>
 
                 <h3 class="product-modal-price text-danger mb-4">
-                  {{ selectedProduct.price }} LE
+                  £{{ selectedProduct.price }}
                 </h3>
 
                 <div class="quantity-selector mb-4">
@@ -341,4 +335,4 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>

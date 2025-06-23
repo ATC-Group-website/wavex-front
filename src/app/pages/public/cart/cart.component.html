@@ -1,0 +1,133 @@
+<section class="cart-section">
+  <div class="container">
+    <!-- Page Title with Icon -->
+    <div class="text-center mb-5">
+      <h1 class="cart-title">
+        <svg
+          width="22"
+          height="30"
+          viewBox="0 0 32 42"
+          fill="none"
+          class="mt-2"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
+            fill="rgba(69, 129, 139, 1)"
+          />
+        </svg>
+        Shopping Cart
+      </h1>
+      @if (!isCartEmpty()) {
+      <p class="text-muted">{{ getTotalItems() }} items in your cart</p>
+      }
+    </div>
+
+    <!-- Cart Items Grid (Show only if cart has items) -->
+    @if (!isCartEmpty()) {
+    <div class="row g-4 mb-5">
+      @for (item of cartItems; track item.id) {
+      <div class="col-xl-4 col-lg-6 col-md-6 col-12">
+        <div class="cart-card h-100">
+          <div class="card-body text-center">
+            <!-- Product Image -->
+            <div class="product-images mb-3">
+              <div class="d-flex justify-content-center">
+                <div class="product-image-container">
+                  <img
+                    [src]="item.image"
+                    [alt]="item.name"
+                    class="product-image-real"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Product Name -->
+            <h5 class="product-name mb-3">{{ item.name }}</h5>
+
+            <!-- Price -->
+            <p class="product-price mb-3">£{{ item.price }}</p>
+
+            <!-- Quantity Controls -->
+            <div class="quantity-controls mb-3">
+              <button
+                class="btn btn-quantity"
+                type="button"
+                (click)="decreaseQuantity(item.id)"
+                [disabled]="item.quantity <= 1"
+              >
+                <i class="fas fa-minus"></i>
+              </button>
+              <span class="quantity-display">{{ item.quantity }}</span>
+              <button
+                class="btn btn-quantity"
+                type="button"
+                (click)="increaseQuantity(item.id)"
+              >
+                <i class="fas fa-plus"></i>
+              </button>
+            </div>
+
+            <!-- Item Total -->
+            <p class="item-total mb-3">
+              Subtotal:
+              <strong>£{{ (item.price * item.quantity).toFixed(2) }}</strong>
+            </p>
+
+            <!-- Remove Button -->
+            <button class="btn btn-remove w-100" (click)="removeItem(item.id)">
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- Cart Summary and Checkout -->
+    <div class="row mb-4">
+      <div class="col-12">
+        <div class="cart-summary text-center">
+          <h3 class="total-price mb-4">
+            Total: <strong>£{{ getCartTotal().toFixed(2) }}</strong>
+          </h3>
+          <div class="d-flex gap-3 justify-content-center flex-wrap">
+            <a routerLink="/store" class="btn btn-secondary"
+              >Continue Shopping</a
+            >
+            <button class="btn btn-outline-danger" (click)="clearCart()">
+              Clear Cart
+            </button>
+            <button class="btn btn-checkout" (click)="proceedToCheckout()">
+              Checkout Now !
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+
+    <!-- Empty Cart Message -->
+    @if (isCartEmpty()) {
+    <div class="row">
+      <div class="col-12">
+        <div class="empty-cart-container text-center py-5">
+          <i
+            class="fas fa-shopping-cart text-muted mb-4"
+            style="font-size: 4rem"
+          ></i>
+          <h3 class="text-muted mb-3">Your cart is empty</h3>
+          <p class="text-muted mb-4">
+            Looks like you haven't added any products to your cart yet.
+          </p>
+          <a routerLink="/store" class="btn btn-primary btn-lg">
+            <i class="fas fa-arrow-left me-2"></i>
+            Start Shopping
+          </a>
+        </div>
+      </div>
+    </div>
+    }
+  </div>
+</section>
