@@ -29,7 +29,7 @@ export class StoreComponent implements OnInit {
     {
       id: 1,
       name: 'WaveX Balance Board (Official)',
-      price: 249.0,
+      price: 999.0,
       image: '/images/temp.png',
       category: 'Balance Board',
       description: 'Core product, premium material',
