@@ -30,12 +30,29 @@ export class StoreComponent implements OnInit {
       id: 1,
       name: 'WaveX Balance Board (Official)',
       price: 999.0,
-      image: '/images/temp.png',
+      image: '/images/wavex-board.jpg',
       category: 'Balance Board',
       description: 'Core product, premium material',
     },
     {
       id: 2,
+      name: 'Anti slip Yoga mat',
+      price: 21.99,
+      image: '/images/wavex-anti-slip-mat.jpg',
+      category: 'Yoga Accessories',
+      description: 'Non-slip surface for enhanced stability',
+    },
+    {
+      id: 3,
+      name: 'Wavex exercise set',
+      price: 34.99,
+      image: '/images/wavex-training-set.jpg',
+      category: 'Yoga Accessories',
+      description:
+        'Complete workout outfit including comfortable top and bottom designed for optimal performance and flexibility during training sessions.',
+    },
+    {
+      id: 4,
       name: 'WaveX Grip Socks',
       price: 12.99,
       image: '/images/temp-2.png',
@@ -43,7 +60,7 @@ export class StoreComponent implements OnInit {
       description: 'Entry-level, good for impulse buys',
     },
     {
-      id: 3,
+      id: 5,
       name: 'WaveX Resistance Band Set',
       price: 21.99,
       image: '/images/temp-3.png',
@@ -51,63 +68,63 @@ export class StoreComponent implements OnInit {
       description: '3 bands + pouch',
     },
     {
-      id: 4,
+      id: 6,
       name: 'WaveX Aqua Mat Towel',
       price: 18.99,
-      image: '/images/temp.png',
+      image: '/images/wavex-towel.jpg',
       category: 'Towels',
       description: 'Performance microfiber',
     },
     {
-      id: 5,
-      name: 'WaveX Dry Bag Backpack (15L)',
-      price: 28.0,
-      image: '/images/temp-2.png',
+      id: 7,
+      name: 'Wavex tote bag',
+      price: 19.99,
+      image: '/images/wavex-backpack.jpg',
       category: 'Bags',
       description: 'Durable, branded',
     },
     {
-      id: 6,
+      id: 8,
       name: 'WaveX Insulated Bottle',
       price: 22.99,
-      image: '/images/temp-3.png',
+      image: '/images/wavex-bottle.jpg',
       category: 'bottles',
       description: 'High-perceived value',
     },
     {
-      id: 7,
+      id: 9,
       name: 'WaveX Apparel Shirt',
-      price: 24.99,
-      image: '/images/temp.png',
+      price: 14.99,
+      image: '/images/wavex-shirt.jpg',
       category: 'Apparel Collection',
       description: 'Premium performance shirt',
     },
     {
-      id: 8,
+      id: 10,
       name: 'WaveX Apparel Leggings',
       price: 29.99,
       image: '/images/temp-2.png',
       category: 'Apparel Collection',
       description: 'High-performance training leggings',
     },
+    // {
+    //   id: 11,
+    //   name: 'WaveX Apparel Premium Shirt',
+    //   price: 34.99,
+    //   image: '/images/temp-3.png',
+    //   category: 'Apparel Collection',
+    //   description: 'Premium style variant',
+    // },
     {
-      id: 9,
-      name: 'WaveX Apparel Premium Shirt',
-      price: 34.99,
-      image: '/images/temp-3.png',
-      category: 'Apparel Collection',
-      description: 'Premium style variant',
-    },
-    {
-      id: 10,
-      name: 'WaveX Hoodie – Unstoppable',
+      id: 11,
+      name: 'WaveX Hoodie - Unstoppable',
       price: 39.99,
       image: '/images/temp.png',
       category: 'Apparel Collection',
       description: 'Premium item, limited edition option',
     },
     {
-      id: 11,
+      id: 12,
       name: 'WaveX On-Demand Class Pack',
       price: 14.99,
       image: '/images/temp-2.png',
@@ -115,7 +132,7 @@ export class StoreComponent implements OnInit {
       description: '5-class video series',
     },
     {
-      id: 12,
+      id: 13,
       name: 'Training Program PDF Bundle',
       price: 9.99,
       image: '/images/temp-3.png',
@@ -147,16 +164,17 @@ export class StoreComponent implements OnInit {
       value: 'Digital Products',
       icon: 'fas fa-circle',
     },
+    {
+      name: 'Yoga Accessories',
+      value: 'Yoga Accessories',
+      icon: 'fas fa-circle',
+    },
   ];
 
   // State variables
   filteredProducts: Product[] = [];
-  displayedProducts: Product[] = [];
   currentFilter: string = 'all';
   searchTerm: string = '';
-  currentPage: number = 1;
-  productsPerPage: number = 9;
-  totalPages: number = 0;
 
   // Modal state
   selectedProduct: Product | null = null;
@@ -189,18 +207,6 @@ export class StoreComponent implements OnInit {
     }
 
     this.filteredProducts = products;
-    this.totalPages = Math.ceil(
-      this.filteredProducts.length / this.productsPerPage
-    );
-    this.currentPage = 1; // Reset to first page when filters change
-    this.updateDisplayedProducts();
-  }
-
-  // Update displayed products based on current page
-  updateDisplayedProducts(): void {
-    const startIndex = (this.currentPage - 1) * this.productsPerPage;
-    const endIndex = startIndex + this.productsPerPage;
-    this.displayedProducts = this.filteredProducts.slice(startIndex, endIndex);
   }
 
   // Handle filter selection
@@ -212,27 +218,6 @@ export class StoreComponent implements OnInit {
   // Handle search
   onSearch(): void {
     this.applyFilters();
-  }
-
-  // Pagination methods
-  goToPage(page: number): void {
-    if (page >= 1 && page <= this.totalPages) {
-      this.currentPage = page;
-      this.updateDisplayedProducts();
-    }
-  }
-
-  nextPage(): void {
-    this.goToPage(this.currentPage + 1);
-  }
-
-  prevPage(): void {
-    this.goToPage(this.currentPage - 1);
-  }
-
-  // Get page numbers for pagination
-  getPageNumbers(): number[] {
-    return Array.from({ length: this.totalPages }, (_, i) => i + 1);
   }
 
   // Add to cart functionality
