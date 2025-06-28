@@ -6,8 +6,15 @@
   overflow: hidden;
 }
 
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+
 .hero-description {
-  color: #2f545f;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .hero-section .wave-background {

@@ -3,14 +3,38 @@
   id="home"
   class="hero-section d-flex align-items-center min-vh-100 position-relative"
 >
-  <div class="container">
-    <div class="row align-items-center hero-content-row flex-direction-row">
-      <div class="col-lg-6">
-        <div class="hero-content">
+  <!-- Background Video -->
+  <video
+    class="hero-video position-absolute top-0 start-0 w-100 h-100"
+    autoplay
+    [muted]="true"
+    loop
+    playsinline
+    style="object-fit: cover; z-index: -1"
+  >
+    <source src="/images/test.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Video Overlay -->
+  <div
+    class="hero-overlay position-absolute top-0 start-0 w-100 h-100"
+    style="background: rgba(0, 0, 0, 0.4); z-index: 0"
+  ></div>
+
+  <div class="container position-relative" style="z-index: 1">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="hero-content text-center">
           <div class="hero-subtitle mb-4">
-            <h1 class="h1 fw-semibold">Ride The Wave</h1>
-            <h1 class="h1 fw-semibold">Of Fitness...</h1>
-            <p class="h2 fw-semibold">Start Your Aqua Fitness Journey Now !</p>
+            <h1 class="h1 fw-semibold text-white">Ride The Wave</h1>
+            <h1 class="h1 fw-semibold text-white">Of Fitness...</h1>
+            <div class="floatfit-hero-text my-4">
+              <h2 class="h1 fw-semibold text-white">FLOW WITH IT</h2>
+            </div>
+            <p class="h2 fw-semibold text-white">
+              Start Your Aqua Fitness Journey Now !
+            </p>
           </div>
           <button
             class="btn block fs-4 fw-bold mt-5 rounded-4"
@@ -20,17 +44,9 @@
           </button>
         </div>
       </div>
-      <div class="col-lg-6 text-end text-white floatfit-hero-text">
-        <h2 class="h1 fw-semibold">FLOW</h2>
-        <h3 class="h1 fw-semibold">WITH</h3>
-        <p class="h1 fw-semibold">IT</p>
-      </div>
     </div>
   </div>
-  <div class="wave-background"></div>
-  <div class="hero-img position-absolute d-none d-xl-block">
-    <img src="/images/hero-img.png" alt="WaveX Training" />
-  </div>
+
   <div class="social-media position-absolute">
     <div class="facebook social-icon">
       <i class="fa-brands fa-facebook-f"></i>
@@ -174,13 +190,13 @@
   />
 </div>
 
-<!-- What is FloatFit Section -->
-<section class="py-5">
+<!-- What is WaveX Sport Section -->
+<section class="py-5" style="background-color: #eff7f9">
   <div class="container">
-    <div class="text-center what-is-floatfit" data-aos="fade-up">
+    <div class="text-center what-is-wavex" data-aos="fade-up">
       <h2 class="h2 fw-bold mb-3">What is WaveX Sport?</h2>
       <div class="border-top mb-3 m-auto" style="max-width: 100px"></div>
-      <p class="mb-4 m-auto fw-semibold fs-5" style="max-width: 1000px">
+      <p class="mb-5 m-auto fw-semibold fs-5" style="max-width: 1000px">
         WaveX Sport is an innovative fitness experience that takes your workout
         to the water-literally. Using our signature floating WaveX mats, all
         exercises are performed while balancing on water, turning every move
@@ -188,122 +204,48 @@
         your core, sharpens your focus, and amplifies the benefits of
         traditional workouts, all while keeping it low-impact and fun.
       </p>
-      <div class="text-center d-block d-lg-none mb-4" data-aos="fade-left">
-        <img
-          src="/images/temp-2.png"
-          alt="FloatFit Training"
-          class="img-fluid rounded-3"
-          style="object-fit: cover; max-height: 400px; width: auto"
-        />
-      </div>
     </div>
-    <div
-      class="row align-items-center floatfit-list"
-      style="max-width: 1200px; margin: 0 auto"
-    >
-      <div class="col-lg-6" data-aos="fade-right">
-        <ul class="list-unstyled">
-          <li
-            class="mb-2 d-flex gap-2"
-            data-aos="slide-up"
-            data-aos-delay="100"
-          >
-            <svg
-              width="20"
-              height="28"
-              viewBox="0 0 32 42"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="mt-1"
-            >
-              <path
-                d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
-                fill="rgba(69, 129, 139, 1)"
-              />
-            </svg>
-            <p class="fw-semibold fs-5">Full-Body Engagement</p>
-          </li>
-          <li
-            class="mb-2 d-flex gap-2"
-            data-aos="slide-up"
-            data-aos-delay="200"
-          >
-            <svg
-              width="20"
-              height="28"
-              viewBox="0 0 32 42"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="mt-1"
-            >
-              <path
-                d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
-                fill="rgba(69, 129, 139, 1)"
-              />
-            </svg>
-            <p class="fw-semibold fs-5">Low-Impact, Joint-Friendly</p>
-          </li>
-          <li
-            class="mb-2 d-flex gap-2"
-            data-aos="slide-up"
-            data-aos-delay="300"
-          >
-            <svg
-              width="20"
-              height="28"
-              viewBox="0 0 32 42"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="mt-1"
-            >
-              <path
-                d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
-                fill="rgba(69, 129, 139, 1)"
-              />
-            </svg>
-            <p class="fw-semibold fs-5">Improved Balance & Focus</p>
-          </li>
-          <li
-            class="mb-2 d-flex gap-2"
-            data-aos="slide-up"
-            data-aos-delay="300"
-          >
-            <svg
-              width="20"
-              height="28"
-              viewBox="0 0 32 42"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="mt-1"
-            >
-              <path
-                d="M32 28.875C32 36.1237 24.8366 42 16 42C7.16344 42 0 36.1237 0 28.875C0 21.6263 12.16 0 16 0C19.84 0 32 21.6263 32 28.875Z"
-                fill="rgba(69, 129, 139, 1)"
-              />
-            </svg>
-            <p class="fw-semibold fs-5">Enhancing Core Strength</p>
-          </li>
-        </ul>
-        <a
-          routerLink="/programs"
-          class="btn mb-5 mb-lg-0 px-4 py-2 block w-100 fs-4 fw-bold mt-lg-5"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          Learn More
-        </a>
+
+    <div class="row g-4" style="max-width: 1000px; margin: 0 auto">
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="d-flex align-items-center gap-3 p-3">
+          <div class="service-icon">
+            <i class="fas fa-dumbbell fa-2x text-primary"></i>
+          </div>
+          <h5 class="fw-semibold mb-0">Full-Body Engagement</h5>
+        </div>
       </div>
-      <div class="col-lg-6 text-end d-none d-lg-block" data-aos="fade-left">
-        <img
-          src="/images/temp-2.png"
-          alt="FloatFit Training"
-          class="img-fluid rounded-3"
-          style="object-fit: cover; max-height: 500px; width: auto"
-        />
+
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="d-flex align-items-center gap-3 p-3">
+          <div class="service-icon">
+            <i class="fas fa-heart fa-2x text-primary"></i>
+          </div>
+          <h5 class="fw-semibold mb-0">Low-Impact, Joint-Friendly</h5>
+        </div>
+      </div>
+
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="d-flex align-items-center gap-3 p-3">
+          <div class="service-icon">
+            <i class="fas fa-balance-scale fa-2x text-primary"></i>
+          </div>
+          <h5 class="fw-semibold mb-0">Improved Balance & Focus</h5>
+        </div>
+      </div>
+
+      <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="d-flex align-items-center gap-3 p-3">
+          <div class="service-icon">
+            <i class="fas fa-chalkboard-teacher fa-2x text-primary"></i>
+          </div>
+          <h5 class="fw-semibold mb-0">Enhancing Core Strength</h5>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 <div data-aos="zoom-out" data-aos-delay="300">
   <img
     src="/images/wavex-3.png"

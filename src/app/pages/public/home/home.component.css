@@ -1,22 +1,25 @@
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #4cc2dd 0%, #24717d 85%, #174951 100%);
   position: relative;
   width: 100%;
   max-width: 100%;
-  overflow-x: clip;
+  overflow: hidden;
 }
-.hero-img {
-  margin-top: 50px;
-  top: 100px;
-  left: 800px;
+
+.hero-video {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  backdrop-filter: blur(1px);
+}
+
+.hero-content {
   animation: fadeSlideUp 1s ease-out forwards;
-  opacity: 0;
 }
-.hero-img img {
-  height: 32rem;
-  width: auto;
-}
+
 @keyframes fadeSlideUp {
   0% {
     opacity: 0;
@@ -33,38 +36,47 @@
 }
 
 .hero-content h1 {
-  font-size: 4.5rem;
-  line-height: 0.9;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  line-height: 1.1;
   letter-spacing: -2px;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  margin-bottom: 1rem;
 }
 
 .hero-subtitle h2,
 .hero-subtitle h3 {
   color: white;
   margin-bottom: 0.5rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .hero-content button {
-  background-color: rgba(217, 217, 217, 0.23);
-  color: rgba(47, 84, 95, 1);
-  max-width: 600px;
-  padding: 0.5rem 2rem;
+  background-color: rgba(69, 129, 139, 1);
+  color: white;
+  max-width: 300px;
+  padding: 0.75rem 2rem;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.hero-content button:hover {
+  background-color: rgba(69, 129, 139, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle p {
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.floatfit-hero-text h2,
-.floatfit-hero-text h3,
-.floatfit-hero-text p {
-  font-size: clamp(4rem, 8vw, 6rem);
+.floatfit-hero-text h2 {
   color: white;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+  margin: 0.5rem 0;
+  font-weight: 900;
+  letter-spacing: 2px;
 }
 
 /* hero section animation */
@@ -185,6 +197,9 @@
 
   .service-card {
     margin-bottom: 1rem;
+  }
+  .social-media {
+    display: none;
   }
 }
 
