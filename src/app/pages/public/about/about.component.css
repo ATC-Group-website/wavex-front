@@ -4,6 +4,8 @@
   background: linear-gradient(135deg, #4cc2dd 0%, #24717d 85%, #174951 100%);
   position: relative;
   overflow: hidden;
+  height: 60svh;
+  min-height: 600px;
 }
 
 .hero-content h1 {
@@ -12,9 +14,7 @@
 }
 
 .hero-description {
-  color: #ffffff;
-  font-size: 2rem;
-  font-weight: 500;
+  color: #2f545f;
 }
 
 .hero-section .wave-background {

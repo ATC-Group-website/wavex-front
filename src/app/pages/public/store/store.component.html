@@ -1,4 +1,4 @@
-<section id="home" class="hero-section d-flex align-items-center min-vh-100">
+<section id="home" class="hero-section d-flex align-items-center">
   <div class="container">
     <div class="row">
       <div class="text-center" style="max-width: 500px; margin: 0 auto">
@@ -10,6 +10,17 @@
     </div>
   </div>
   <div class="wave-background"></div>
+  <div class="social-media position-absolute">
+    <div class="facebook social-icon">
+      <i class="fa-brands fa-facebook-f"></i>
+    </div>
+    <div class="insta social-icon">
+      <i class="fa-brands fa-instagram"></i>
+    </div>
+    <div class="twitter social-icon">
+      <i class="fa-brands fa-x-twitter"></i>
+    </div>
+  </div>
 </section>
 
 <section class="store-section py-5">
@@ -209,16 +220,6 @@
           <div class="row g-4">
             <div class="col-lg-6 col-md-12">
               <div class="d-flex h-100">
-                <!-- <div
-                class="d-flex flex-row gap-3 justify-content-center align-items-center h-100"
-              > -->
-                <!-- <div class="product-modal-image">
-                  <img
-                    [src]="selectedProduct.image"
-                    [alt]="selectedProduct.name"
-                    class="img-fluid rounded-3"
-                  />
-                </div> -->
                 <div class="product-modal-image">
                   <img
                     [src]="selectedProduct.image"
