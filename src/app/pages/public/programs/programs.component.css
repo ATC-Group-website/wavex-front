@@ -119,6 +119,10 @@
   font-weight: 600;
 }
 
+.program-description {
+  color: #5e818a;
+}
+
 .btn-program {
   background: rgba(69, 129, 139, 1);
   color: white;
