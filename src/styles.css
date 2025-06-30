@@ -90,7 +90,7 @@ body {
   }
 }
 .social-media {
-  top: 100px;
+  top: 150px;
   right: 20px;
   position: absolute;
   display: flex;
@@ -130,4 +130,10 @@ body {
   color: #174951;
   background-color: white;
   cursor: pointer;
+}
+
+@media (max-width: 991.98px) {
+  .social-media {
+    display: none;
+  }
 }

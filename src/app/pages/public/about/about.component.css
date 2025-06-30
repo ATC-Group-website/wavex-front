@@ -1,20 +1,14 @@
 /* Hero Section */
 .hero-section {
-  padding-top: 100px;
-  background: linear-gradient(135deg, #4cc2dd 0%, #24717d 85%, #174951 100%);
+  padding: 100px 0;
+  background-image: url("/images/about-cover.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
-  height: 60svh;
+  height: 100svh;
   min-height: 600px;
-}
-
-.hero-content h1 {
-  font-size: 4rem;
-  font-weight: 700;
-}
-
-.hero-description {
-  color: #2f545f;
 }
 
 .hero-section .wave-background {
@@ -27,7 +21,11 @@
     repeat-x;
   background-size: 2400px 100%;
   animation: waveMove 6s linear infinite;
-  z-index: 0;
+  z-index: 99;
+}
+
+.hero-layer {
+  background-color: #337b8a;
 }
 
 @keyframes waveMove {
