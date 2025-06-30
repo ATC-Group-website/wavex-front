@@ -62,10 +62,10 @@ export class StoreComponent implements OnInit {
     },
     {
       id: 5,
-      name: 'WaveX Resistance Band Set',
+      name: 'WaveX Resistance Band',
       price: 21.99,
-      image: '/images/wavex-resistance-band.png',
-      category: 'Resistance Band Set',
+      image: '/images/wavex-resistance-band.jpg',
+      category: 'Resistance Band',
       description: '3 bands + pouch',
     },
     {
@@ -141,8 +141,8 @@ export class StoreComponent implements OnInit {
     { name: 'Balance Board', value: 'Balance Board', icon: 'fas fa-circle' },
     { name: 'Socks', value: 'Socks', icon: 'fas fa-circle' },
     {
-      name: 'Resistance Band Set',
-      value: 'Resistance Band Set',
+      name: 'Resistance Band',
+      value: 'Resistance Band',
       icon: 'fas fa-circle',
     },
     { name: 'Towels', value: 'Towels', icon: 'fas fa-circle' },
@@ -151,11 +151,6 @@ export class StoreComponent implements OnInit {
     {
       name: 'Apparel Collection',
       value: 'Apparel Collection',
-      icon: 'fas fa-circle',
-    },
-    {
-      name: 'Digital Products',
-      value: 'Digital Products',
       icon: 'fas fa-circle',
     },
     {

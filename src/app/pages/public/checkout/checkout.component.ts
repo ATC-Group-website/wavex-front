@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.css',
 })
@@ -15,7 +14,7 @@ export class CheckoutComponent {
 
   // Order summary data
   orderItems = [
-    { name: 'WaveX Balance Board', price: 249.0, quantity: 1 },
+    { name: 'WaveX Balance Board', price: 999.0, quantity: 1 },
     { name: 'WaveX Grip Socks', price: 12.99, quantity: 2 },
     { name: 'WaveX Resistance Band', price: 21.99, quantity: 1 },
   ];
