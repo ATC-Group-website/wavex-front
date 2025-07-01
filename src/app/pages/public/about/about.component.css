@@ -150,13 +150,13 @@
 .image-gallery-item-1 img,
 .image-gallery-item-2 img {
   border-radius: 15px;
-  height: 240px;
+  height: 300px;
   width: 100%;
   object-fit: cover;
 }
 
 .image-gallery-item-3 img {
-  height: 260px;
+  height: 400px;
   object-fit: cover;
 }
 
