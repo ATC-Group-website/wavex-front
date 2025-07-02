@@ -1,0 +1,136 @@
+<!-- Desktop Sidebar (hidden on mobile) -->
+<nav
+  class="sidebar position-fixed bg-gradient-primary h-100 d-none d-lg-flex flex-column"
+>
+  <!-- Sidebar Header -->
+  <div class="sidebar-header p-4 border-bottom">
+    <div class="d-flex align-items-center">
+      <div class="logo-container me-3">
+        <img src="/images/logo.png" alt="WaveX" class="sidebar-logo" />
+      </div>
+      <div class="brand-text">
+        <h4 class="mb-0 text-white fw-bold brand-name">WaveX</h4>
+        <small class="text-white-50 brand-subtitle">Admin Panel</small>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Links -->
+  <div class="sidebar-nav flex-grow-1 py-4">
+    <ul class="nav flex-column px-3">
+      @for (item of navItems; track item.path) {
+      <li class="nav-item mb-2">
+        <a
+          [routerLink]="item.path"
+          class="nav-link d-flex align-items-center py-3 px-4 rounded-3"
+          [class.active]="isActiveRoute(item.path)"
+        >
+          <i [class]="item.icon" class="nav-icon me-3"></i>
+          <span class="nav-text">{{ item.label }}</span>
+        </a>
+      </li>
+      }
+    </ul>
+  </div>
+
+  <!-- Sidebar Footer -->
+  <div class="sidebar-footer border-top p-4">
+    <div class="admin-profile d-flex align-items-center mb-3">
+      <div
+        class="avatar bg-gradient rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm"
+      >
+        <i class="fas fa-user text-white"></i>
+      </div>
+      <div class="profile-info flex-grow-1">
+        <div class="fw-semibold text-white">Admin User</div>
+        <div class="text-white-50 small">admin&#64;wavex.com</div>
+      </div>
+    </div>
+
+    <div class="d-grid">
+      <button
+        class="btn btn-outline-light btn-sm rounded-3 fw-medium"
+        (click)="logout()"
+      >
+        <i class="fas fa-sign-out-alt"></i>
+        <span>Logout</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Off-canvas Sidebar -->
+<div
+  class="offcanvas offcanvas-start d-lg-none"
+  tabindex="-1"
+  [id]="offcanvasId"
+  aria-labelledby="offcanvasLabel"
+>
+  <div class="offcanvas-header border-bottom bg-gradient-primary">
+    <div class="d-flex align-items-center">
+      <img src="/images/logo.png" alt="WaveX" class="sidebar-logo me-3" />
+      <div>
+        <h5 class="offcanvas-title text-white fw-bold mb-0" id="offcanvasLabel">
+          WaveX
+        </h5>
+        <small class="text-white-50">Admin Panel</small>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+
+  <div class="offcanvas-body p-0 bg-gradient-primary">
+    <!-- Navigation Links -->
+    <div class="sidebar-nav py-3">
+      <ul class="nav flex-column px-3">
+        @for (item of navItems; track item.path) {
+        <li class="nav-item mb-2">
+          <a
+            [routerLink]="item.path"
+            class="nav-link d-flex align-items-center py-3 px-4 rounded-3"
+            [class.active]="isActiveRoute(item.path)"
+            (click)="closeOffcanvas()"
+          >
+            <i [class]="item.icon" class="nav-icon me-3"></i>
+            <span class="nav-text">{{ item.label }}</span>
+            <div
+              class="nav-indicator"
+              [class.active]="isActiveRoute(item.path)"
+            ></div>
+          </a>
+        </li>
+        }
+      </ul>
+    </div>
+
+    <!-- Mobile Footer -->
+    <div class="sidebar-footer border-top p-4 mt-auto">
+      <div class="admin-profile d-flex align-items-center mb-3">
+        <div
+          class="avatar bg-gradient rounded-circle d-flex align-items-center justify-content-center me-3 shadow-sm"
+        >
+          <i class="fas fa-user text-white"></i>
+        </div>
+        <div class="profile-info flex-grow-1">
+          <div class="fw-semibold text-white">Admin User</div>
+          <div class="text-white-50 small">admin&#64;wavex.com</div>
+        </div>
+      </div>
+
+      <div class="d-grid">
+        <button
+          class="btn btn-outline-light btn-sm rounded-3 fw-medium"
+          (click)="logout()"
+        >
+          <i class="fas fa-sign-out-alt me-2"></i>
+          Logout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

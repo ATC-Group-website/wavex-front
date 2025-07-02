@@ -12,6 +12,19 @@
   object-fit: cover;
 }
 
+.hero-section .wave-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2400 120' preserveAspectRatio='none'><path d='M0,60 C400,20 800,100 1200,60 C1600,20 2000,100 2400,60 L2400,120 L0,120 Z' fill='%23ffffff' fill-opacity='0.2'/></svg>")
+    repeat-x;
+  background-size: 2400px 100%;
+  animation: waveMove 6s linear infinite;
+  z-index: 99;
+}
+
 .hero-overlay {
   backdrop-filter: blur(1px);
 }

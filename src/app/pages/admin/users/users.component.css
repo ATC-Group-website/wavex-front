@@ -1,0 +1,89 @@
+/* Users Page Styles */
+.users-page {
+  padding: 0;
+}
+
+/* Avatar Styles */
+.avatar-circle img {
+  object-fit: cover;
+}
+
+/* Table Enhancements */
+.table th {
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6c757d;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.table td {
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f3f4;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Button Group Styles */
+.btn-group-sm .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.775rem;
+}
+
+/* Card Enhancements */
+.card {
+  border-radius: 12px;
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.card-header {
+  border-radius: 12px 12px 0 0 !important;
+  background-color: #fff !important;
+  border-bottom: 1px solid #e9ecef !important;
+}
+
+/* Search Input Group */
+.input-group-text {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  color: #6c757d;
+}
+
+/* Badge Enhancements */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.25px;
+}
+
+/* Empty State */
+.text-center.py-5 {
+  padding: 3rem 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .users-page .d-flex.gap-2 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+  }
+
+  .btn-group-sm {
+    flex-direction: column;
+  }
+
+  .btn-group-sm .btn {
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+
+  .table-responsive {
+    font-size: 0.875rem;
+  }
+}

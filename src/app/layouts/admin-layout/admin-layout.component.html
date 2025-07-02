@@ -1,1 +1,64 @@
-<p>admin-layout works!</p>
+<div class="admin-layout d-flex vh-100">
+  <!-- Sidebar -->
+  <app-sidebar></app-sidebar>
+
+  <!-- Main Content Area -->
+  <main class="main-content flex-grow-1 d-flex flex-column">
+    <!-- Top Bar -->
+    <header
+      class="topbar bg-white border-bottom p-3 d-flex align-items-center justify-content-between shadow-sm"
+    >
+      <div class="d-flex align-items-center">
+        <!-- Mobile Off-canvas Toggle Button -->
+        <button
+          class="btn btn-primary d-lg-none me-3 rounded-3"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#adminSidebar"
+          aria-controls="adminSidebar"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <h4 class="mb-0 text-dark fw-semibold">Admin Dashboard</h4>
+      </div>
+
+      <!-- User Info -->
+      <div class="d-flex align-items-center">
+        <div class="dropdown">
+          <button
+            class="btn btn-outline-primary dropdown-toggle rounded-3 fw-medium"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-user me-2"></i>
+            Admin User
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0 rounded-3">
+            <li>
+              <a class="dropdown-item py-2" href="#"
+                ><i class="fas fa-user me-2 text-primary"></i>Profile</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item py-2" href="#"
+                ><i class="fas fa-cog me-2 text-primary"></i>Settings</a
+              >
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item py-2 text-danger" href="#"
+                ><i class="fas fa-sign-out-alt me-2"></i>Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- Content Container -->
+    <div class="content-container flex-grow-1 p-4 overflow-auto bg-light">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>
